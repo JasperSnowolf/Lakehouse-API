@@ -1,0 +1,35 @@
+openapi: 3.0.3
+info:
+  title: Lakehouse API
+  version: 1.0.11
+tags:
+  - name: Status
+    description: Basic house info
+paths:
+  /status:
+    get:
+      tags:
+        - status
+      summary: Get the status of the house
+      operationId: getHouseStatus
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+components:
+  schemas:
+    Status:
+      required:
+        - isTrashDay
+        - isRecyclingDay
+      type: object
+      properties:
+        isTrashDay:
+          type: boolean
+          example: true
+        isRecyclingDay:
+          type: boolean
+          example: true
