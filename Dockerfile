@@ -1,4 +1,4 @@
 FROM openjdk:8
-ADD target/Lakehouse-API.war Lakehouse-API.war
-ENTRYPOINT ["java", "Lakehouse-API.war"]
+ADD target/Lakehouse-API.jar Lakehouse-API.jar
+ENTRYPOINT ["java", "-jar", "Lakehouse-API.jar"]
 EXPOSE 8080
